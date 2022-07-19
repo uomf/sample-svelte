@@ -60,7 +60,7 @@
                 if (val1 == 0) {
                     opnd = 0;
                 } else {
-                    opnd = val0 + val1;
+                    opnd = val0 / val1;
                 }
                 break;
             case '%':
@@ -99,12 +99,12 @@
 <style lang="scss">
     .frame {
         margin: 0 auto;
-        width: 325px;
+        width: 326px;
         display: flex;
         flex-wrap: wrap;
     }
     .btn {
-        width: 240px;
+        width: 246px;
         display: flex;
         flex-wrap: wrap;
     }
