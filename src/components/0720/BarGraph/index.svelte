@@ -1,7 +1,7 @@
 <script lang="ts">
     export let data: number[];
     export let title: string;
-    export let guideCount: number = 5;
+    export let guideCount: number = 6;
     export let minV: number;
     export let maxV: number;
 
@@ -14,9 +14,8 @@
     const leftGuides : number[] = [];
     
     for (let i = guideCount; i > 0; i--) {
-        leftGuides.push(minV + i * diff);
+        leftGuides.push(Math.round(100 *(minV + i * diff)) / 100);
     }
-    
 </script>
 
 <div class="root">
@@ -39,13 +38,11 @@
 <style lang="scss">
     .root {
         $title-height: 48px;
-        $under-height: 32px;
-
+        $under-height: 48px;
         width: 100%;
         height: 100%;
         .title-filed {
             height: $title-height;
-            background: #f00;
         }
         .graph-filed {
             display: flex;
@@ -54,7 +51,7 @@
             .l-guide {
                 width: 100%;
                 height: 100%;
-                background: yellow;
+                background: #fff;
                 display: flex;
                 flex-direction: column;
                 .guide-item {
@@ -69,7 +66,6 @@
                 width: calc(100% - 100px);
                 position: absolute;
                 flex: 1 0;
-                background: #0f0;
                 display: flex;
             }
         }

@@ -3,6 +3,10 @@
     export let max: number;
     export let value: number;
 
+	if(value == min) {
+		min = (min / max) / (max - min);
+	}
+
 	let height: number = ((value - min) / (max - min)) * 100;
 
 	$: {
@@ -17,12 +21,12 @@
 <style lang="scss">
     .root {
 		flex: 1 0;
-		background: rgba(255, 255, 0, 0);
-		border: solid 1px #000;
+		border-left: solid 1px #000;
+		border-right: solid 1px #000;
 		position: relative;
-        box-sizing: content-box;
 		.item {
-			width: 100%;
+			margin-left: 25%;
+			width: 50%;
 			position: absolute;
 			bottom: 0;
 			background: #f30;
